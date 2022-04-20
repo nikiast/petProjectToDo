@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TaskController {
     private Task newTask;
     private TaskRepo taskRepo = new TaskRepo();
-    private String [] selection = {"1","2","3","4","q"};
+    private final String [] selection = {"1","2","3","4","q"};
 
     public void taskMenu() {
         System.out.println("\nMenu: " +

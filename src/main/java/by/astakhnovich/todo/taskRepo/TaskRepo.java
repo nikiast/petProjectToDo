@@ -1,8 +1,10 @@
 package by.astakhnovich.todo.taskRepo;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import by.astakhnovich.todo.model.Task;
-import java.io.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -29,6 +31,7 @@ public class TaskRepo {
     }
 
     public boolean serializeToJson() {
+
         try (FileOutputStream fileOutputStream = new FileOutputStream("json//TaskList.json")){
             String result = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(tasksList);
             fileOutputStream.write(result.getBytes());
